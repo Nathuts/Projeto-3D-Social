@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Vendor styles -->
+        <link rel="stylesheet" href="vendors/material-design-iconic-font/css/material-design-iconic-font.min.css">
+        <link rel="stylesheet" href="vendors/jquery-scrollbar/jquery.scrollbar.css">
+
+        <style>
+            #grid[data-columns]::before {
+                content: '3 .column.size-1of3';
+            }
+            @media screen and (max-width: 480px){
+                #grid[data-columns]::before {
+                    content: '1 .column.size-1of1';
+                }
+            }
+
+            @media screen and (min-width: 481px) and (max-width: 768px) {
+                #grid[data-columns]::before {
+                    content: '2 .column.size-1of2';
+                }
+            }
+            @media screen and (min-width: 769px) {
+                #grid[data-columns]::before {
+                    content: '3 .column.size-1of3';
+                }
+            }
+        </style>
+
+        <!-- App styles -->
+        <link rel="stylesheet" href="css/app.min.css">
+    </head>
+
+    <body data-ma-theme="indigo">
+        <main class="main">
+            <div class="page-loader">
+                <div class="page-loader__spinner">
+                    <svg viewBox="25 25 50 50">
+                        <circle cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+                    </svg>
+                </div>
+            </div>
+
+            <header class="header">
+                <div class="navigation-trigger hidden-xl-up" data-ma-action="aside-open" data-ma-target=".sidebar">
+                    <div class="navigation-trigger__inner">
+                        <i class="navigation-trigger__line"></i>
+                        <i class="navigation-trigger__line"></i>
+                        <i class="navigation-trigger__line"></i>
+                    </div>
+                </div>
+
+                <div class="header__logo hidden-sm-down">
+                    <h1><a href="index.html">Projeto 3D Social</a></h1>
+                </div>
+
+            </header>
+
+            <aside class="sidebar">
+                <div class="scrollbar-inner">
+
+                    <ul class="navigation">
+                        <li class="navigation__active"><a href="home.html"><i class="zmdi zmdi-comment-alert"></i> Solicitações</a></li>
+                        <li><a href="#"><i class="zmdi zmdi-3d-rotation"></i> Projetos</a></li>
+                        <li><a href="#"><i class="zmdi zmdi-info-outline"></i> Sobre </a></li>
+
+                    </ul>
+                </div>
+            </aside>
+
+            <section class="content">
+                <header class="content__title">
+                    <h1>Solicitações</h1>
+
+                    <div class="actions">
+                        <button type="button" class="btn btn-outline-primary btn--icon-text ">
+                            <i class="zmdi zmdi-comment-alert"></i>
+                            Cadastrar Solicitação
+                        </button>
+                    </div>
+                </header>
+
+                <div class="row quick-stats">
+                    <div class="col-sm-6 col-md-3">
+                        <div class="quick-stats__item bg-indigo">
+                            <div class="quick-stats__info">
+                                <h2>98</h2>
+                                <small>Abertas</small>
+                            </div>
+
+                            <div class="quick-stats__chart sparkline-bar-stats">6,4,8,6,5,6,7,8,3,5,9,5</div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-md-3">
+                        <div class="quick-stats__item bg-blue">
+                            <div class="quick-stats__info">
+                                <h2>356</h2>
+                                <small>Finalizadas</small>
+                            </div>
+
+                            <div class="quick-stats__chart sparkline-bar-stats">4,7,6,2,5,3,8,6,6,4,8,6</div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-md-3">
+                        <div class="quick-stats__item bg-orange">
+                            <div class="quick-stats__info">
+                                <h2>11</h2>
+                                <small>+ de 20 dias Aberta</small>
+                            </div>
+
+                            <div class="quick-stats__chart sparkline-bar-stats">9,4,6,5,6,4,5,7,9,3,6,5</div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-md-3">
+                        <div class="quick-stats__item bg-red">
+                            <div class="quick-stats__info">
+                                <h2>5</h2>
+                                <small>+ de 30 dias Aberta</small>
+                            </div>
+
+                            <div class="quick-stats__chart sparkline-bar-stats">5,6,3,9,7,5,4,6,5,6,4,9</div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr>
+                <br>
+
+                <div id="grid" data-columns>
+
+                    <div class="card widget-contacts">
+                        <div class="widget-pie__item bg-indigo">
+                            <div class="easy-pie-chart" data-percent="50" data-size="100" data-track-color="rgba(0,0,0,0.08)" data-bar-color="#fff">
+                                <span class="easy-pie-chart__value">50</span>
+                            </div>
+                            <div class="widget-pie__title">Hospital das Clínicas</div>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">Projeto: Mascaras</h4>
+                            <div class="widget-visitors__stats">
+                                <div>
+                                    <strong>500</strong>
+                                    <small>Solicitados</small>
+                                </div>
+                                <div>
+                                    <strong>253</strong>
+                                    <small>Entregues</small>
+                                </div>
+                            </div>                       
+
+                            <ul class="icon-list">
+                                <li><i class="zmdi zmdi-city-alt"></i> CNPJ: 42.981.501/0001-46</li>                              
+                                <li><i class="zmdi zmdi-pin"></i> Endereço de envio:</li>
+                                <li>
+                                    <address>
+                                        Rua: Av. Dr. Enéas Carvalho de Aguiar, 255 - Cerqueira César, São Paulo - SP, 05403-000
+                                    </address>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-primary btn--icon-text"><i class="zmdi zmdi-print"></i> Imprimir</button>
+                            <button class="btn btn-light ">Mais informações</button>                            
+                        </div>
+                    </div>
+
+                    <div class="card widget-contacts">
+                        <div class="widget-pie__item bg-indigo">
+                            <div class="easy-pie-chart" data-percent="20" data-size="100" data-track-color="rgba(0,0,0,0.08)" data-bar-color="#fff">
+                                <span class="easy-pie-chart__value">20</span>
+                            </div>
+                            <div class="widget-pie__title">Hospital das Clínicas</div>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">Projeto: Respirador</h4>
+                            <div class="widget-visitors__stats">
+                                <div>
+                                    <strong>110</strong>
+                                    <small>Solicitados</small>
+                                </div>
+                                <div>
+                                    <strong>25</strong>
+                                    <small>Entregues</small>
+                                </div>
+                            </div>                       
+
+                            <ul class="icon-list">
+                                <li><i class="zmdi zmdi-city-alt"></i> CNPJ: 42.981.501/0001-46</li>
+                                <li><i class="zmdi zmdi-phone"></i> 00971123456789</li>
+                                <li><i class="zmdi zmdi-email"></i> pessoas@hc.org.br</li>                                
+                                <li><i class="zmdi zmdi-pin"></i> Endereço de envio:</li>
+                                <li>
+                                    <address>
+                                        Rua: Av. Dr. Enéas Carvalho de Aguiar, 255 - Cerqueira César, São Paulo - SP, 05403-000
+                                    </address>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-primary btn--icon-text"><i class="zmdi zmdi-print"></i> Imprimir</button>
+                            <button class="btn btn-light ">Mais informações</button>                            
+                        </div>
+                    </div>
+
+                    <div class="card widget-contacts">
+                        <div class="widget-pie__item bg-orange">
+                            <div class="easy-pie-chart" data-percent="31" data-size="100" data-track-color="rgba(0,0,0,0.08)" data-bar-color="#fff">
+                                <span class="easy-pie-chart__value">31</span>
+                            </div>
+                            <div class="widget-pie__title">UBS - Santos</div>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">Projeto: Respirador</h4>
+                            <div class="widget-visitors__stats">
+                                <div>
+                                    <strong>100</strong>
+                                    <small>Solicitados</small>
+                                </div>
+                                <div>
+                                    <strong>31</strong>
+                                    <small>Entregues</small>
+                                </div>
+                            </div>                       
+
+                            <ul class="icon-list">
+                                <li><i class="zmdi zmdi-city-alt"></i> CNPJ: 42.981.501/0001-46</li>                               
+                                <li><i class="zmdi zmdi-pin"></i> Endereço de envio:</li>
+                                <li>
+                                    <address>
+                                        Rua: Av. Dr. Enéas Carvalho de Aguiar, 255 - Cerqueira César, São Paulo - SP, 05403-000
+                                    </address>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-primary btn--icon-text"><i class="zmdi zmdi-print"></i> Imprimir</button>
+                            <button class="btn btn-light ">Mais informações</button>                            
+                        </div>
+                    </div>
+
+                    <div class="card widget-contacts">
+                        <div class="widget-pie__item bg-orange">
+                            <div class="easy-pie-chart" data-percent="31" data-size="100" data-track-color="rgba(0,0,0,0.08)" data-bar-color="#fff">
+                                <span class="easy-pie-chart__value">31</span>
+                            </div>
+                            <div class="widget-pie__title">UBS - Santos</div>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">Projeto: Mascaras</h4>
+                            <div class="widget-visitors__stats">
+                                <div>
+                                    <strong>1000</strong>
+                                    <small>Solicitados</small>
+                                </div>
+                                <div>
+                                    <strong>301</strong>
+                                    <small>Entregues</small>
+                                </div>
+                            </div>                       
+
+                            <ul class="icon-list">
+                                <li><i class="zmdi zmdi-city-alt"></i> CNPJ: 42.981.501/0001-46</li>                               
+                                <li><i class="zmdi zmdi-pin"></i> Endereço de envio:</li>
+                                <li>
+                                    <address>
+                                        Rua: Av. Dr. Enéas Carvalho de Aguiar, 255 - Cerqueira César, São Paulo - SP, 05403-000
+                                    </address>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-primary btn--icon-text"><i class="zmdi zmdi-print"></i> Imprimir</button>
+                            <button class="btn btn-light ">Mais informações</button>                            
+                        </div>
+                    </div>
+
+                </div>
+               
+            </section>
+            <footer class="footer hidden-xs-down">
+                <p>© Projeto 3D Social.</p>
+            </footer>
+        </main>
+
+        <!-- Older IE warning message -->
+            <!--[if IE]>
+                <div class="ie-warning">
+                    <h1>Warning!!</h1>
+                    <p>Você está usando uma versão desatualizada do Internet Explorer, atualize para qualquer um dos seguintes navegadores da web para acessar este site.</p>
+
+                    <div class="ie-warning__downloads">
+                        <a href="http://www.google.com/chrome">
+                            <img src="img/browsers/chrome.png" alt="">
+                        </a>
+
+                        <a href="https://www.mozilla.org/en-US/firefox/new">
+                            <img src="img/browsers/firefox.png" alt="">
+                        </a>
+
+                        <a href="http://www.opera.com">
+                            <img src="img/browsers/opera.png" alt="">
+                        </a>
+
+                        <a href="https://support.apple.com/downloads/safari">
+                            <img src="img/browsers/safari.png" alt="">
+                        </a>
+
+                        <a href="https://www.microsoft.com/en-us/windows/microsoft-edge">
+                            <img src="img/browsers/edge.png" alt="">
+                        </a>
+
+                        <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                            <img src="img/browsers/ie.png" alt="">
+                        </a>
+                    </div>
+                </div>
+            <![endif]-->
+
+        <!-- Javascript -->
+        <!-- Vendors -->
+        <script src="vendors/jquery/jquery.min.js"></script>
+        <script src="vendors/popper.js/popper.min.js"></script>
+        <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
+        <script src="vendors/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+        <script src="vendors/jquery-scrollLock/jquery-scrollLock.min.js"></script>
+
+        <!-- Charts-->
+        <script src="vendors/easy-pie-chart/jquery.easypiechart.min.js"></script>
+        <script src="vendors/salvattore/salvattore.min.js"></script>
+        <script src="vendors/sparkline/jquery.sparkline.min.js"></script>
+        <script src="demo/js/other-charts.js"></script>
+
+        <!-- App functions and actions -->
+        <script src="js/app.min.js"></script>
+    </body>
+</html>
