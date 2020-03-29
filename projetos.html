@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Vendor styles -->
+        <link rel="stylesheet" href="vendors/material-design-iconic-font/css/material-design-iconic-font.min.css">
+        <link rel="stylesheet" href="vendors/jquery-scrollbar/jquery.scrollbar.css">
+        <link rel="stylesheet" href="vendors/sweetalert2/sweetalert2.min.css">        
+        <link rel="stylesheet" href="vendors/dropzone/dropzone.css">
+
+        <!-- App styles -->
+        <link rel="stylesheet" href="css/app.min.css">
+    </head>
+
+    <body data-ma-theme="indigo">
+        <main class="main">
+            <div class="page-loader">
+                <div class="page-loader__spinner">
+                    <svg viewBox="25 25 50 50">
+                        <circle cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+                    </svg>
+                </div>
+            </div>
+
+            <header class="header">
+                <div class="navigation-trigger hidden-xl-up" data-ma-action="aside-open" data-ma-target=".sidebar">
+                    <div class="navigation-trigger__inner">
+                        <i class="navigation-trigger__line"></i>
+                        <i class="navigation-trigger__line"></i>
+                        <i class="navigation-trigger__line"></i>
+                    </div>
+                </div>
+
+                <div class="header__logo hidden-sm-down">
+                    <h1><a href="index.html">Impressão Coletiva</a></h1>
+                </div>
+
+            </header>
+
+            <aside class="sidebar">
+                <div class="scrollbar-inner">
+
+                    <ul class="navigation">
+                        <li><a href="home.html"><i class="zmdi zmdi-comment-alert"></i> Solicitações</a></li>
+                        <li class="navigation__active"><a href="projetos.html"><i class="zmdi zmdi-3d-rotation"></i> Projetos</a></li>
+                        <li><a href="#"><i class="zmdi zmdi-info-outline"></i> Sobre </a></li>
+
+                    </ul>
+                </div>
+            </aside>
+
+            <section class="content">
+                <header class="content__title">
+                    <h1>Projetos</h1>
+
+                    <div class="actions">
+                        <button type="button" class="btn btn-outline-primary btn--icon-text" data-toggle="modal" data-target="#cad-solicita">
+                            <i class="zmdi zmdi-3d-rotation"></i>
+                            Cadastrar Projeto
+                        </button>
+                    </div>
+                </header>
+                <hr>
+                <br>
+
+                <div id="grid" data-columns>
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Mascara </h4>
+                            <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Nulla vitae elit libero, a pharetra augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id ligula porta felis euismod semper. Donec sed odio dui.</p>      
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-primary btn--icon-text"><i class="zmdi zmdi-download"></i> Baixar</button>                     
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Peça 1 do respirador</h4>
+                            </div>
+                        <div class="card-footer">
+                            <button class="btn btn-primary btn--icon-text"><i class="zmdi zmdi-download"></i> Baixar</button>                     
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Respirador Completo </h4>
+                            <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Nulla vitae elit libero, a pharetra augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id ligula porta felis euismod semper. Donec sed odio dui.</p>      
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-primary btn--icon-text"><i class="zmdi zmdi-download"></i> Baixar</button>                     
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Respirador 2 Completo </h4>
+                            <p class="card-text">Apharetra augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed odio dui.</p>      
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-primary btn--icon-text"><i class="zmdi zmdi-download"></i> Baixar</button>                     
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Mascara XPTO</h4>
+                            <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Nulla vitae elit libero, a pharetra augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id ligula porta felis euismod semper. Donec sed odio dui.</p>      
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-primary btn--icon-text"><i class="zmdi zmdi-download"></i> Baixar</button>                     
+                        </div>
+                    </div>
+
+                </div>
+               
+            </section>
+            <footer class="footer hidden-xs-down">
+                <p>© Impressão Coletiva.</p>
+            </footer>
+        </main>
+
+        <!-- Cadastro de Projeto -->
+        <div class="modal fade" id="cad-solicita" tabindex="-1">
+            <div class="modal-dialog ">
+                <form class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title pull-left">Cadastro de Projeto</h5>
+                    </div>
+                    <div class="modal-body">
+                        <fieldset>
+                            <legend>
+                                <i class="zmdi zmdi-cloud-upload"></i>Upload dos Arquivos
+                            </legend>
+                            <div class="dropzone mb-3" id="dropzone-upload"></div>                            
+                        </fieldset>
+
+                        <fieldset >
+                            <legend>
+                                <i class="zmdi zmdi-info-outline"></i>Sobre o Projeto
+                            </legend>
+                            
+                             <!--Title-->
+                             <div class="form-group">
+                                <label class="control-label">Nome</label>
+                                <div class="fg-line">
+                                    <input type="text" class="form-control" placeholder="Atribua um Nome ao projeto" required>
+                                </div>                                            
+                            </div>                            
+
+                            <div class="form-group">
+                                <label class="control-label">Descrição <small>(opcional)</small></label>
+                                <textarea class="form-control textarea-autosize" placeholder="Descreva seu projeto..."></textarea>
+                                <i class="form-group__bar"></i>
+                            </div>
+
+                        </fieldset>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                        <button type="button" class="btn btn-light" data-dismiss="modal">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Older IE warning message -->
+            <!--[if IE]>
+                <div class="ie-warning">
+                    <h1>Atenção!!</h1>
+                    <p>Você está usando uma versão desatualizada do Internet Explorer, atualize para qualquer um dos seguintes navegadores da web para acessar este site.</p>
+
+                    <div class="ie-warning__downloads">
+                        <a href="http://www.google.com/chrome">
+                            <img src="img/browsers/chrome.png" alt="">
+                        </a>
+
+                        <a href="https://www.mozilla.org/en-US/firefox/new">
+                            <img src="img/browsers/firefox.png" alt="">
+                        </a>
+
+                        <a href="http://www.opera.com">
+                            <img src="img/browsers/opera.png" alt="">
+                        </a>
+
+                        <a href="https://support.apple.com/downloads/safari">
+                            <img src="img/browsers/safari.png" alt="">
+                        </a>
+
+                        <a href="https://www.microsoft.com/en-us/windows/microsoft-edge">
+                            <img src="img/browsers/edge.png" alt="">
+                        </a>
+
+                        <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                            <img src="img/browsers/ie.png" alt="">
+                        </a>
+                    </div>
+                </div>
+            <![endif]-->
+
+        <!-- Javascript -->
+        <!-- Vendors -->
+        <script src="vendors/jquery/jquery.min.js"></script>
+        <script src="vendors/popper.js/popper.min.js"></script>
+        <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
+        <script src="vendors/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+        <script src="vendors/jquery-scrollLock/jquery-scrollLock.min.js"></script>
+
+        <!-- Charts-->
+        <script src="vendors/easy-pie-chart/jquery.easypiechart.min.js"></script>
+        <script src="vendors/salvattore/salvattore.min.js"></script>
+        <script src="vendors/sparkline/jquery.sparkline.min.js"></script>
+        <script src="demo/js/other-charts.js"></script>
+
+        <!-- Forms -->
+        <script src="vendors/jquery-mask-plugin/jquery.mask.min.js"></script>
+        <script src="vendors/sweetalert2/sweetalert2.min.js"></script>  
+        <script src="vendors/autosize/autosize.min.js"></script>   
+        <script src="vendors/dropzone/dropzone.min.js"></script>
+
+        <!-- App functions and actions -->
+        <script src="js/app.min.js"></script>
+    </body>
+</html>
