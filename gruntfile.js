@@ -58,11 +58,39 @@ module.exports = function(grunt) {
             }
         },
 
+         // Combine API js files
+        concat: {
+            options: {
+              separator: ';',
+            },
+            dist: {
+              src: [
+                        'js/inc/api/config.js', 
+                        'js/inc/api/request.js',
+                        'js/inc/api/model/*'
+                   ],
+              dest: 'js/inc/api/api.js',
+            },
+        },
+
+        // Babel
+        babel: {
+            options: {
+              sourceMap: true,
+              //presets: ['@babel/preset-env']
+            },
+            dist: {
+              files: {
+                'js/inc/api.es5.js': 'js/inc/api/api.js'
+              }
+            }
+        },
+
         // Minifica js
         uglify: {
             my_target: {
                 files: {
-                    'js/app.min.js': ['js/inc/functions/*.js', 'js/inc/actions.js']
+                    'js/app.min.js': ['js/inc/api.es5.js', 'js/inc/functions/*.js', 'js/inc/actions.js']
                 }
             }
         },
@@ -94,7 +122,7 @@ module.exports = function(grunt) {
             },
             js: {
                 files: jsFiles,
-                tasks: ['uglify', 'copy:js']
+                tasks: ['concat', 'babel','uglify', 'copy:js']
             },
             misc: {
                 files: miscFiles,
@@ -129,8 +157,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-postcss');
+    grunt.loadNpmTasks('grunt-babel');
+    grunt.loadNpmTasks('grunt-contrib-concat');
 
-    grunt.registerTask('default', ['clean', 'sass', 'postcss', 'cssmin', 'uglify']);
+    grunt.registerTask('default', ['clean', 'sass', 'postcss', 'cssmin', 'concat', 'babel', 'uglify']);
 
 
 };

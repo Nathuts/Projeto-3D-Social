@@ -84,7 +84,7 @@
                     </div>
                 </header>
 
-                <div class="row quick-stats">
+                <div class="row quick-stats" style="display: none">
                     <div class="col-sm-6 col-md-3">
                         <div class="quick-stats__item bg-indigo">
                             <div class="quick-stats__info">
@@ -135,22 +135,23 @@
 
                 <div id="grid" data-columns>
 
-                    <div class="card widget-contacts">
-                        <div class="widget-pie__item bg-indigo">
-                            <div class="easy-pie-chart" data-percent="50" data-size="100" data-track-color="rgba(0,0,0,0.08)" data-bar-color="#fff">
-                                <span class="easy-pie-chart__value">50</span>
+                    
+                    <div class="card widget-contacts template-center">
+                        <div class="widget-pie__item bg-indigo"> 
+                            <div class="easy-pie-chart" data-percent="{{percent}}" data-size="100" data-track-color="rgba(0,0,0,0.08)" data-bar-color="#fff">
+                                <span class="easy-pie-chart__value">{{percent}}</span>
                             </div>
-                            <div class="widget-pie__title">Hospital das Clínicas</div>
+                            <div class="widget-pie__title">{{center.name}}</div>
                         </div>
                         <div class="card-body">
-                            <h4 class="card-title">Projeto: Mascaras</h4>
+                            <h4 class="card-title">Projeto: {{project.name}}</h4>
                             <div class="widget-visitors__stats">
                                 <div>
-                                    <strong>500</strong>
+                                    <strong>{{totalNeed}}</strong>
                                     <small>Solicitados</small>
                                 </div>
                                 <div>
-                                    <strong>253</strong>
+                                    <strong>{{totalDelivered}}</strong>
                                     <small>Entregues</small>
                                 </div>
                             </div>                       
@@ -159,7 +160,7 @@
                                 <li><i class="zmdi zmdi-pin"></i> Endereço de entrega:</li>
                                 <li>
                                     <address>
-                                        Rua: Av. Dr. Enéas Carvalho de Aguiar, 255 - Cerqueira César, São Paulo - SP, 05403-000
+                                        {{center.address}}
                                     </address>
                                 </li>
                             </ul>
@@ -169,6 +170,8 @@
                             <button class="btn btn-link ">Mais informações</button>                            
                         </div>
                     </div>
+
+                    <!--
 
                     <div class="card widget-contacts">
                         <div class="widget-pie__item bg-indigo">
@@ -277,6 +280,8 @@
                             <button class="btn btn-link ">Mais informações</button>                            
                         </div>
                     </div>
+
+                    --->
 
                 </div>
                
@@ -443,6 +448,7 @@
 
         <!-- Javascript -->
         <!-- Vendors -->
+        <script src="vendors/axios/dist/axios.min.js"></script>
         <script src="vendors/jquery/jquery.min.js"></script>
         <script src="vendors/popper.js/popper.min.js"></script>
         <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
