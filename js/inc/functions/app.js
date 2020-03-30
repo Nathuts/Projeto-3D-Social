@@ -1,11 +1,16 @@
 /*------------------------------------------------
     Page Loader
 -------------------------------------------------*/
-$(window).on('load', function () {
-    setTimeout(function () {
-        $('.page-loader').fadeOut();
-    }, 500);
-});
+// $(window).on('load', function () {
+//     setTimeout(function () {
+//         $('.page-loader').fadeOut();
+//     }, 500);
+// });
+
+function pageLoaded()
+{
+    $('.page-loader').fadeOut();
+}
 
 
 $(document).ready(function () {
@@ -123,9 +128,12 @@ $(document).ready(function () {
                 });
                 $(template).remove();
                 $("#grid .column > .card").fadeIn(300);
+                animateCharts();
+                pageLoaded();
             }).catch(function(response){
                 console.log('Error while trying to get demands');
                 console.log(response);
+                pageLoaded();
             }); 
         }
     ];
