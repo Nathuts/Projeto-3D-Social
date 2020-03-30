@@ -9,7 +9,6 @@ $(window).on('load', function () {
 
 
 $(document).ready(function () {
-
     
     /*------------------------------------------------
         Menu
@@ -119,9 +118,11 @@ $(document).ready(function () {
                     item.center = centerList[item.centerID];
                     item.project = projectList[item.projectID];
                     var _templateHTML = templateParse(template, item);
+                    $(_templateHTML).show();
                     $("#grid .column").eq(i%3).append(_templateHTML);
                 });
                 $(template).remove();
+                $("#grid .column > .card").fadeIn(300);
             }).catch(function(response){
                 console.log('Error while trying to get demands');
                 console.log(response);

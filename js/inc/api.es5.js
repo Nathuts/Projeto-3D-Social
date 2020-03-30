@@ -1,9 +1,9 @@
 "use strict";
 
 if (location.href.indexOf('.com') != -1) {
-  var _apiURL = 'https://rserver01.azurewebsites.net/api/';
+  var apiURL = 'https://rserver01.azurewebsites.net/api/';
 } else {
-  var _apiURL2 = 'http://127.0.0.1:5000/api/';
+  var apiURL = 'http://127.0.0.1:5000/api/';
 }
 
 ;
