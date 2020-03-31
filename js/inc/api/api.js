@@ -16,32 +16,18 @@ let request =
                 })
                 .catch( error => {
                     return error;
-                });
+                });        
+    },
 
-        // return new Promise( (resolve,reject) => 
-        // {
-        //     let uri = apiURL.concat(uri);
-        //     let xhr = new XMLHttpRequest();
-        //     xhr.open('GET', uri);
-        //     xhr.responseType = 'json';
-        //     xhr.send();
-        //     xhr.onload = () =>
-        //     {
-        //         if( xhr.status != 200 )
-        //         {
-        //             reject('error while trying to get data');
-        //         }
-        //         else 
-        //         {
-        //             resolve(xhr.response);
-        //         }
-        //     };
-        //     xhr.onerror = () => 
-        //     {
-        //         reject('error while trying to get data');
-        //     }
-        //})
-        
+    post : (uri, data) => 
+    {
+        return axios.post(apiURL.concat(uri), data)
+                .then( response => {
+                    return response;
+                })
+                .catch( error => {
+                    return error;
+                });   
     }
 
 };let Center = 
@@ -88,9 +74,6 @@ let request =
     get : () => {
         return request.get('Project')
         .then( response => {
-            response.data.forEach(item => {
-              //  item.address = `${item.street}, ${item.addressNumber} - ${item.district}, ${item.city}, ${item.zipCode}`
-            });
             return response.data;
         })
         .catch( response => {
@@ -107,5 +90,26 @@ let request =
         .catch( response => {
             return response;
         });
+    },
+
+    add : (data) => 
+    {
+        return request.post('Project',data)
+        .then( response => {
+            return response.data;
+        })
+        .catch( response => {
+            return response;
+        });
+    },
+
+    instance : () => 
+    {
+        return {
+            "name": "",
+            "description": "",
+            "file": "mask.zip",
+        };
     }
+
 }

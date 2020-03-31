@@ -3,9 +3,6 @@ let Project =
     get : () => {
         return request.get('Project')
         .then( response => {
-            response.data.forEach(item => {
-              //  item.address = `${item.street}, ${item.addressNumber} - ${item.district}, ${item.city}, ${item.zipCode}`
-            });
             return response.data;
         })
         .catch( response => {
@@ -22,5 +19,26 @@ let Project =
         .catch( response => {
             return response;
         });
+    },
+
+    add : (data) => 
+    {
+        return request.post('Project',data)
+        .then( response => {
+            return response.data;
+        })
+        .catch( response => {
+            return response;
+        });
+    },
+
+    instance : () => 
+    {
+        return {
+            "name": "",
+            "description": "",
+            "file": "mask.zip",
+        };
     }
+
 }

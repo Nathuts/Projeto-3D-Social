@@ -13,29 +13,14 @@ var request = {
       return response;
     }).catch(function (error) {
       return error;
-    }); // return new Promise( (resolve,reject) => 
-    // {
-    //     let uri = apiURL.concat(uri);
-    //     let xhr = new XMLHttpRequest();
-    //     xhr.open('GET', uri);
-    //     xhr.responseType = 'json';
-    //     xhr.send();
-    //     xhr.onload = () =>
-    //     {
-    //         if( xhr.status != 200 )
-    //         {
-    //             reject('error while trying to get data');
-    //         }
-    //         else 
-    //         {
-    //             resolve(xhr.response);
-    //         }
-    //     };
-    //     xhr.onerror = () => 
-    //     {
-    //         reject('error while trying to get data');
-    //     }
-    //})
+    });
+  },
+  post: function post(uri, data) {
+    return axios.post(apiURL.concat(uri), data).then(function (response) {
+      return response;
+    }).catch(function (error) {
+      return error;
+    });
   }
 };
 var Center = {
@@ -72,8 +57,6 @@ var Demand = {
 var Project = {
   get: function get() {
     return request.get('Project').then(function (response) {
-      response.data.forEach(function (item) {//  item.address = `${item.street}, ${item.addressNumber} - ${item.district}, ${item.city}, ${item.zipCode}`
-      });
       return response.data;
     }).catch(function (response) {
       return response;
@@ -85,6 +68,20 @@ var Project = {
     }).catch(function (response) {
       return response;
     });
+  },
+  add: function add(data) {
+    return request.post('Project', data).then(function (response) {
+      return response.data;
+    }).catch(function (response) {
+      return response;
+    });
+  },
+  instance: function instance() {
+    return {
+      "name": "",
+      "description": "",
+      "file": "mask.zip"
+    };
   }
 };
 //# sourceMappingURL=api.es5.js.map

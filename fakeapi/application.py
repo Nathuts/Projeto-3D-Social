@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 from flask_cors import CORS
 
 app = Flask(__name__)
@@ -18,9 +18,12 @@ def centerGETById(id):
 def demandGET():
     return jsonify([{"centerID":1,"projectID":1,"totalNeed":150,"totalDelivered":87,"observations":"O produto precisa sem impresso o quanto antes para atender a demandas do hospital","id":1,"created":"2020-03-30T00:48:18","modificated":"2020-03-30T00:48:18"}])
 
-@app.route("/api/Project")
+@app.route("/api/Project", methods=["GET","POST"])
 def projectGET():
-    return jsonify([{"name":"Máscara","description":"Equipamento com haste que segura uma folha de acetato que garante maior proteção aos profissionais de saúde.","file":"mask.zip","id":1,"created":"2020-03-30T00:43:54","modificated":"2020-03-30T00:43:54"}])
+    if request.method == "GET" :
+        return jsonify([{"name":"Máscara","description":"Equipamento com haste que segura uma folha de acetato que garante maior proteção aos profissionais de saúde.","file":"mask.zip","id":1,"created":"2020-03-30T00:43:54","modificated":"2020-03-30T00:43:54"}])
+    else :
+        return "ok"
 
 @app.route("/api/Project/<int:id>")
 def projectGETById(id):
