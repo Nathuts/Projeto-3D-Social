@@ -108,7 +108,7 @@ let request =
         return {
             "name": "",
             "description": "",
-            "file": "mask.zip",
+            "file": "",
         };
     }
 

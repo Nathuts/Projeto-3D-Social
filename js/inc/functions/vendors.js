@@ -26,9 +26,24 @@ $(document).ready(function () {
     ------------------------------------------------*/
     if($('#dropzone-upload')[0]) {
         $('#dropzone-upload').dropzone({
-            url: "/file/post",
-            addRemoveLinks: true
-        });
+            url: "https://rserver01.azurewebsites.net/api/File/",
+            paramName : "formFile",
+            addRemoveLinks: true,
+            acceptedFiles: 'application/zip, application/octet-stream',
+            complete : function(file)
+            {   
+                console.log(file);
+                if( file.status == 'success' )
+                {
+                    $('[name=file]').val(file.xhr.responseText);
+                    $('form button[type=submit]').attr('disabled',false);
+                }
+                else 
+                {
+                    alert('Houve um problema com o upload do arquivo');
+                }
+            }
+        }); 
     }
 
 

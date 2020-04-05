@@ -141,7 +141,8 @@
                             <legend>
                                 <i class="zmdi zmdi-cloud-upload"></i>Upload dos Arquivos
                             </legend>
-                            <div class="dropzone mb-3" id="dropzone-upload"></div>                            
+                            <div class="dropzone mb-3" id="dropzone-upload">
+                            </div>                            
                         </fieldset>
 
                         <fieldset >
@@ -167,7 +168,8 @@
 
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary">Enviar</button>
+                        <input type="hidden" name="file" value="" /> 
+                        <button type="submit" disabled class="btn btn-primary">Enviar</button>
                         <button type="button" class="btn btn-light" data-dismiss="modal">Cancelar</button>
                     </div>
                 </form>

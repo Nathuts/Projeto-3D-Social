@@ -80,7 +80,7 @@ var Project = {
     return {
       "name": "",
       "description": "",
-      "file": "mask.zip"
+      "file": ""
     };
   }
 };

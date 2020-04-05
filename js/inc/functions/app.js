@@ -181,6 +181,7 @@ $(document).ready(function () {
 
         function addProject(data)
         {
+            
             return Project.add(data)
             .then(function(response){
                 return response;
@@ -188,6 +189,7 @@ $(document).ready(function () {
             .catch(function(response){
                 return response;
             });
+            
         }
 
         $('#form-project').on('submit',function(e)
@@ -197,6 +199,7 @@ $(document).ready(function () {
             var newProject = Project.instance();
             newProject.name = $('[name=name]').val();
             newProject.description = $('[name=description]').val();
+            newProject.file = $('[name=file]').val();
             addProject(newProject)
             .then(function(){
                 pageLoaded();
@@ -207,8 +210,10 @@ $(document).ready(function () {
                 pageLoaded();
                 alert('Um erro ocorreu e o projeto não foi adicionado');
                 location.reload();
-            });
+            }); 
         });
+
+        $('form button[type=submit]').attr('disabled',true);
 
 
     }
