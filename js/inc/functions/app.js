@@ -167,6 +167,7 @@ $(document).ready(function () {
                 newDemand[el.name] = el.value.trim();
             });
             newDemand['projectId'] = parseInt(newDemand['projectId']);
+            newDemand['totalNeed'] = parseInt(newDemand['totalNeed']);
 
             Demand.add(newDemand)
             .then(function(response){
