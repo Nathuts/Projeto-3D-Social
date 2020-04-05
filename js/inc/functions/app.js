@@ -166,13 +166,21 @@ $(document).ready(function () {
             document.querySelectorAll('form [name]').forEach(function(el){
                 newDemand[el.name] = el.value.trim();
             });
+            newDemand['projectId'] = parseInt(newDemand['projectId']);
 
             Demand.add(newDemand)
-            .then(function(){
+            .then(function(response){
                 pageLoaded();
-                alert('Solicitação adicionado com sucesso');
+                if( response.status == 200 )
+                {
+                    alert('Solicitação adicionado com sucesso');
+                }
+                else 
+                {
+                    alert('Um erro ocorreu e a Solicitação não foi adicionado');    
+                }
                 location.reload();
-            })
+            }) 
             .catch(function(){ 
                 pageLoaded();
                 alert('Um erro ocorreu e a Solicitação não foi adicionado');
