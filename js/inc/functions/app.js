@@ -181,7 +181,7 @@ $(document).ready(function () {
                 }
                 location.reload();
             }) 
-            .catch(function(){ 
+            .catch(function(){  
                 pageLoaded();
                 alert('Um erro ocorreu e a Solicitação não foi adicionado');
                 location.reload();
