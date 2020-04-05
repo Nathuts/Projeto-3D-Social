@@ -21,7 +21,7 @@ def demandGET():
 @app.route("/api/Project", methods=["GET","POST"])
 def projectGET():
     if request.method == "GET" :
-        return jsonify([{"name":"Máscara","description":"Equipamento com haste que segura uma folha de acetato que garante maior proteção aos profissionais de saúde.","file":"mask.zip","id":1,"created":"2020-03-30T00:43:54","modificated":"2020-03-30T00:43:54"}])
+        return jsonify([{"name":"Máscara","description":"Equipamento com haste que segura uma folha de acetato que garante maior proteção aos profissionais de saúde.","file":"8","id":1,"created":"2020-03-30T00:43:54","modificated":"2020-03-30T00:43:54"}])
     else :
         return "ok"
 

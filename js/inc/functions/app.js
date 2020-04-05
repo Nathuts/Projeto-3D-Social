@@ -164,7 +164,6 @@ $(document).ready(function () {
                     items.forEach(function(item,i){
                         var _templateHTML = templateParse(template, item);
                         $(_templateHTML).show();
-                        //$("#grid").append(_templateHTML);
                         $("#grid .column").eq(i%3).append(_templateHTML);
                     });
                     $(template).remove();
