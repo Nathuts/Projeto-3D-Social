@@ -166,6 +166,7 @@ $(document).ready(function () {
             document.querySelectorAll('form [name]').forEach(function(el){
                 newDemand[el.name] = el.value.trim();
             });
+            newDemand['projectId'] = parseInt(newDemand['projectId']);
 
             Demand.add(newDemand)
             .then(function(){
