@@ -172,7 +172,7 @@ $(document).ready(function () {
             Demand.add(newDemand)
             .then(function(response){
                 pageLoaded();
-                if( response.status == 200 )
+                if( typeof response == 'number' )
                 {
                     alert('Solicitação adicionado com sucesso');
                 }
