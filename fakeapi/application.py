@@ -14,9 +14,12 @@ def centerGETById(id):
     return jsonify({"name":"Centro de Teste","street":"rua de teste","addressNumber":"120","district":"Vila de teste","city":"São Paulo","zipCode":"00000-00","document":"00.000.000","id":1,"created":"2020-03-28T11:01:04","modificated":"2020-03-28T11:01:04"})
 
 
-@app.route("/api/Demand")
+@app.route("/api/Demand", methods=["GET","POST"])
 def demandGET():
-    return jsonify([{"centerID":1,"projectID":1,"totalNeed":150,"totalDelivered":87,"observations":"O produto precisa sem impresso o quanto antes para atender a demandas do hospital","id":1,"created":"2020-03-30T00:48:18","modificated":"2020-03-30T00:48:18"}])
+    if request.method == "GET" :
+        return jsonify([{"centerID":1,"projectID":1,"totalNeed":150,"totalDelivered":87,"observations":"O produto precisa sem impresso o quanto antes para atender a demandas do hospital","id":1,"created":"2020-03-30T00:48:18","modificated":"2020-03-30T00:48:18"}])
+    else :
+        return "ok"
 
 @app.route("/api/Project", methods=["GET","POST"])
 def projectGET():

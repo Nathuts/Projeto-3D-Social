@@ -138,15 +138,50 @@ $(document).ready(function () {
                     $("#grid .column > .card").fadeIn(300);
                     animateCharts();
                     pageLoaded();
+                    dataAPIQueue.shift()();
                 }).catch(function(response){
                     console.log('Error while trying to get demands');
                     console.log(response);
                     pageLoaded();
                 }); 
+            },
+            function()
+            {
+                /// FILL FORM
+                var optionList = [];
+                $.each(projectList, function(id,project){
+                    optionList.push("<option value='" + id + "'>"+ project.name +"</option>");
+                });
+                $('[name=projectId]').append(optionList.join('')); 
             }
         ];
 
         dataAPIQueue.shift()();
+
+        $('form').on('submit',function(e){
+            e.preventDefault();
+            pageLoading();
+            
+            var newDemand = Demand.instance();
+            document.querySelectorAll('form [name]').forEach(function(el){
+                newDemand[el.name] = el.value.trim();
+            });
+
+            Demand.add(newDemand)
+            .then(function(){
+                pageLoaded();
+                alert('Solicitação adicionado com sucesso');
+                location.reload();
+            })
+            .catch(function(){ 
+                pageLoaded();
+                alert('Um erro ocorreu e a Solicitação não foi adicionado');
+                location.reload();
+            }); 
+            
+        });
+
+
     }
 
     /*------------------------------------------------

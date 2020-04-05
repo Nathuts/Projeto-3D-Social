@@ -52,6 +52,26 @@ var Demand = {
     }).catch(function (response) {
       return response;
     });
+  },
+  add: function add(data) {
+    return request.post('Demand', data).then(function (response) {
+      return response.data;
+    }).catch(function (response) {
+      return response;
+    });
+  },
+  instance: function instance() {
+    return {
+      projectId: "",
+      totalNeed: "",
+      centerZipCode: "",
+      centerStreet: "",
+      centerDistrict: "",
+      centerAddressNumber: "",
+      centerCity: "",
+      centerName: "",
+      centerDocument: ""
+    };
   }
 };
 var Project = {

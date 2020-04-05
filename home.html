@@ -306,10 +306,8 @@
 
                             <div class="form-group">
                                 <div class="select">
-                                    <select class="form-control">
+                                    <select name="projectId" required class="form-control">
                                         <option>Selecione o Projeto</option>
-                                        <option>Mascara</option>
-                                        <option>Respirador</option>
                                     </select>
                                     <i class="form-group__bar"></i>
                                 </div>
@@ -317,8 +315,7 @@
                             <div class="form-group">
                                 <label class="control-label">Quantidade</label>
                                 <div class="fg-line">
-                                    <input type="number" class="form-control" placeholder="0
-                                " required>
+                                    <input type="number" name="totalNeed" class="form-control" placeholder="0" required>
                                 </div> 
                             </div>                            
                         </fieldset>
@@ -332,28 +329,35 @@
                                 <div class="form-group col-sm-12">
                                     <label class="control-label">CEP</label>
                                     <div class="fg-line">
-                                        <input type="text" class="form-control input-mask valida-cep" data-mask="00000-000" placeholder="00000-000" autocomplete="off" required>
+                                        <input type="text" name="centerZipCode" class="form-control input-mask valida-cep" data-mask="00000-000" placeholder="00000-000" autocomplete="off" required>
+                                    </div>                                            
+                                </div>  
+                                <!--CEP-->
+                                <div class="form-group col-sm-12">
+                                    <label class="control-label">Rua</label>
+                                    <div class="fg-line">
+                                        <input type="text" name="centerStreet" class="form-control input-mask" autocomplete="off" required>
                                     </div>                                            
                                 </div>                                        
                                 <!--Bairro-->
                                 <div class="form-group col-sm-9">
                                     <label class="control-label">Bairro</label>
                                     <div class="fg-line">
-                                        <input type="text" class="form-control valida-bairro" placeholder="Bairro, Jardim etc." required>
+                                        <input type="text" name="centerDistrict" class="form-control valida-bairro" placeholder="Bairro, Jardim etc." required>
                                     </div>                                            
                                 </div>
                                 <!--Número-->
                                 <div class="form-group col-sm-3">
                                     <label class="control-label">Número</label>
                                     <div class="fg-line">
-                                        <input type="text" class="form-control" placeholder="" required>
+                                        <input type="text" name="centerAddressNumber" class="form-control" placeholder="" required>
                                     </div>                                            
                                 </div>  
                                 <!--Cidade-->
                                 <div class="form-group col-sm-9">
                                     <label class="control-label">Cidade</label>
                                     <div class="fg-line">
-                                        <input type="text" class="form-control valida-cidade" placeholder="Cidade" required>
+                                        <input type="text" name="centerCity" class="form-control valida-cidade" placeholder="Cidade" required>
                                     </div>
                                 </div>
                                 <!--Estado-->
@@ -374,13 +378,13 @@
 
                                 <div class="form-group col-sm-8">
                                     <label>Instituição</label>
-                                    <input type="text" class="form-control" placeholder="Nome da Instituição" required>
+                                    <input type="text" name="centerName" class="form-control" placeholder="Nome da Instituição" required>
                                     <i class="form-group__bar"></i>
                                 </div> 
 
                                 <div class="form-group col-sm-4">
                                     <label>CNPJ <small>(opcional)</small></label>
-                                    <input type="text" class="form-control input-mask" data-mask="00.000.000/0000-00" placeholder="00.000.000/0000-00" autocomplete="off">
+                                    <input type="text" name="centerDocument" class="form-control input-mask" data-mask="00.000.000/0000-00" placeholder="00.000.000/0000-00" autocomplete="off">
                                     <i class="form-group__bar"></i>
                                 </div> 
 
